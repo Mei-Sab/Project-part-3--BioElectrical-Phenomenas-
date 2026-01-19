@@ -285,6 +285,8 @@ def diff_eq(t, Y):
     dOO = (koSRCa * (Casub**n_Ca) * R - k_om * OO) - (kiSRCa * Casub * OO - con.k_im * S)
     dS  = (kiSRCa * Casub * OO - con.k_im * S) - (k_om * S - koSRCa * (Casub**n_Ca) * RI)
     dRI = (k_om * S - koSRCa * (Casub**n_Ca) * RI) - (con.k_im * RI - kiSRCa * Casub * R)
+    sigma_S = 1e-16   # noise std (as requested at part 3, question 2.2)
+    dS = dS + sigma_S * np.random.randn()
 
     # **********************************************************************
     

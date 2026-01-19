@@ -143,3 +143,5 @@ con.ISO_power = 1.5
 con.PKA_temp = 3.97
 
 
+con.sigma_k_iso = 0.0   # std for noise added to k_iso (Part 3.2)
+

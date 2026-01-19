@@ -67,6 +67,8 @@ def diff_eq(t, Y):
 
     # S.3.2.3 cAMP dynamics
     k_iso = 0.1599 * (con.ISO ** 1.5 / (76.5441 ** 0.6238 + con.ISO ** 1.5))
+    k_iso = k_iso + con.sigma_k_iso * np.random.randn() # (Part 3.2)
+
     k_ibmx = 1.0-(0.86*con.IBMX)/(con.IBMX-3.46)
     k_CCh = 0.0146 * (con.CCh ** 1.4402 / (51.7331 ** 1.4402 + con.CCh ** 1.4402))
     k_1 = con.K_ACI + con.K_AC / (1.0 + np.exp((con.K_Ca - con.k_bCM * f_CMi / (con.k_fCM * (1.0 - f_CMi))) / con.K_AC_Ca))

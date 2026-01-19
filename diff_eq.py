@@ -266,8 +266,8 @@ def diff_eq(t, Y):
     # *************************Add your code here*************************
 
     # --- WT Parameters ---
-    k_om = 0.06   # Transition rate from open to closed state [ms^-1]
-    n_Ca = 2.0    # Power of subspace Ca2+ in transition equations
+    k_om = getattr(con, "k_om", 0.06)   # Transition rate from open to closed state [ms^-1]
+    n_Ca = getattr(con, "n_Ca", 2.0)    # Power of subspace Ca2+ in transition equations
     
     # Equation (1): Ca2+ release flux from the JSR to the subspace
     jSRCarel = con.k_s * OO * (CajSR - Casub)
